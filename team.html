@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hinde Lab - Team</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+    }
+
+    /* =============================
+       HEADER (Fixed)
+    ============================== */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 20px 50px;
+      position: fixed;        /* fixed at top */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;          /* stays above everything */
+    }
+
+    /* Left side: logo + lab title */
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .top-logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .lab-title {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Navigation links */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #007acc;
+      text-decoration: underline;
+    }
+
+
+    /* Background image section */
+    .background-section {
+      background: url('images/Lab.jpg') no-repeat center center/cover;
+      height: calc(100vh - 50px);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .background-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+  overflow: hidden; /* Ensures text stays within the bounds of the element */
+  white-space: nowrap; /* Prevents text from wrapping */
+  width: 0; /* Initially the width is set to 0 */
+  animation: slideIn 3s forwards; /* Animation name, duration, and fill mode */
+}
+
+/* Define the keyframes for the animation */
+@keyframes slideIn {
+  0% {
+    width: 0; /* Start with no width */
+  }
+  100% {
+    width: 100%; /* End with full width */
+  }
+}
+
+
+
+
+    /* Team Section */
+    .team-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    .team-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: left;
+      color: #1a1a1a;
+    }
+
+    .team-card {
+      display: flex;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+      padding: 32px;
+      margin-top: 40px;
+      align-items: flex-start;
+    }
+
+    .team-card img {
+      width: 300px; /* Increased width to match reference */
+      height: 340px; /* Set height for consistency */
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 32px;
+    }
+
+    .team-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: justify;     
+    }
+
+    .team-info h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .team-info h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .team-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      color: #333333;
+    }
+
+    .team-info .email {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .team-info .email span {
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .team-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+
+      .team-card img {
+        margin: 0 0 20px 0;
+        width: 100%;
+        height: auto;
+      }
+
+      .team-info h2 {
+        font-size: 1.75rem;
+      }
+
+      .team-info h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+/* Researchers Section */
+.researchers-section {
+  max-width: 1100px;
+  margin: 30px auto 10px;
+  padding: 0 24px;
+}
+
+.researchers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+.researcher-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: left;
+}
+
+.researcher-card img {
+  width: 220px; /* Smaller than PI image */
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.researcher-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  min-height: 40px; /* Ensures names take up consistent space */
+
+}
+
+.researcher-card .role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.researcher-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.researcher-card p strong {
+  font-size: 0.8rem; /* Slightly larger */
+  font-weight: 700;
+}
+
+
+.researcher-card .email {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+
+@media (max-width: 768px) {
+  .researchers-grid {
+    grid-template-columns: 1fr; /* Stack on small screens */
+  }
+}
+
+
+
+
+  /* Additional Researchers Section */
+.MOREresearchers-section {
+  max-width: 1100px;
+  margin: 10px auto 10px;  /* Add margin space between the sections */
+  padding: 0 24px;
+}
+
+.MOREresearchers-section .researchers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+    @media (max-width: 768px) {
+      .researchers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  /* Additional Researchers Section2 */
+.MOREresearchers-section2 {
+  max-width: 1100px;
+  margin: 10px auto 10px;  /* Add margin space between the sections */
+  padding: 0 24px;
+}
+
+.MOREresearchers-section2 .researchers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+    @media (max-width: 768px) {
+      .researchers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+.alumni-section {
+  max-width: 1100px;
+  margin: 40px auto; /* Adjust top margin to control spacing */
+  padding: 0 24px;
+}
+
+.alumni-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #1a1a1a;
+}
+
+.alumni-list p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.alumni-list strong {
+  font-weight: bold;
+}
+
+
+.meet-us-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: left;
+
+  max-width: 1100px;    /* same width constraint */
+  margin: 80px auto 40px auto; /* top auto bottom auto -> centers block but text stays left */
+  padding: 0 24px;      /* same side padding as the sections */
+}
+
+
+
+
+/* =============================
+   IMAGE SLIDER SECTION (Updated)
+============================= */
+.slider-section {
+  background-color: #fff;  /* gray box */
+  width: 100vw;                  /* 👈 spans the whole viewport width */
+  left: 50%;                     /* shift to center */
+  right: 50%;
+  margin-left: -50vw;            /* cancel parent centering */
+  margin-right: -50vw;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+
+}
+
+/* The visible gray box area */
+.slider-container {
+  position: relative;
+  max-width: 1200px;             /* larger so the images can breathe */
+  width: 90%;
+  height: 380px;                 /* taller, more proportional */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-section {
+  margin-bottom: 80px; /* 👈 adds nice breathing space before footer */
+  padding: 60px 0 80px 0; /* top, sides, bottom */
+
+}
+
+
+/* Each slide fills the same gray area */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+/* Images stay contained within the block */
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* keeps proportions */
+  object-position: center;
+  margin: auto;
+  border-radius: 0px;
+}
+
+/* Active image visible */
+.active-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;                /* arrow color */
+  font-size: 45px;            /* make it sleek and visible */
+  font-weight: 150;
+  user-select: none;
+  background: none;           /* removes the white circle */
+  border: none;               /* no borders */
+  box-shadow: none;           /* no shadow */
+  transition: color 0.3s ease, transform 0.2s ease;
+  opacity: 0.6;               /* slightly transparent by default */
+}
+
+.prev:hover, .next:hover {
+  color: #000;                /* same color, just bolder on hover */
+  transform: translateY(-50%) scale(1.15); /* slight grow */
+  opacity: 1;                 /* fully visible on hover */
+}
+
+.prev { left: 25px; }
+.next { right: 25px; }
+
+/* Dots */
+.dots {
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  bottom: -20px;   /* pushes dots DOWN */
+
+}
+
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+
+
+    /* =============================
+       FOOTER
+    ============================== */
+    .final-section {
+  background-color: #f5f5f5;
+  width: 100vw;                  /* span the entire viewport */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;            /* neutralize centering */
+  margin-right: -50vw;
+  padding: 40px 0;
+  margin-top: 60px;
+
+}    
+
+    .final-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .left-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .lab-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .lab-logo {
+      width: 60px;
+      height: auto;
+    }
+
+    .lab-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-name2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .lab-subtitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+
+    .building-name {
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: auto;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    .logo-container2 img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .banner-image {
+        min-height: 45vh;
+      }
+      .banner-bottom {
+        min-height: 35vh;
+      }
+      .banner-text h1 {
+        font-size: 2.6rem;
+      }
+      .banner-text h2 {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <a href="https://study.unimelb.edu.au/">
+        <img src="images/UnimelbForTop.png" alt="University of Melbourne Logo" class="top-logo">
+      </a>
+      <h1 class="lab-title">HINDE LAB</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="methods.html">Methods</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="join.html">Join Us</a>
+    </nav>
+  </header>
+
+
+  <section class="background-section">
+    <h1>Lab Members</h1>
+  </section>
+
+<section class="team-section" id="team">
+    <h2 class="team-title">Team</h2>
+    <div class="team-card">
+        <a href="https://findanexpert.unimelb.edu.au/profile/127872-elizabeth-hinde" target="_blank">
+            <img src="images/PI.JPG" alt="Principal Investigator">
+        </a>
+        <div class="team-info">
+            <h2>Dr. Elizabeth Hinde</h2>
+            <h3>Principal Investigator</h3>
+            <p>Dr. Elizabeth Hinde is the Principal Investigator of the Laboratory for Cellular Biophysics at the University of Melbourne. Her research focuses on developing and applying advanced fluorescence spectroscopy and live-cell imaging techniques to uncover how nuclear architecture regulates genome function in real time.</p>
+            <p class="email">Email: <span>elizabeth.hinde@unimelb.edu.au</span></p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="researchers-section">
+  <div class="researchers-grid">
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Jieqiong Lou">
+      <h3>Jieqiong Lou</h3>
+      <p class="role">Post-doc</p>
+<p class="identity"><strong>Joined:</strong> 2019</p>
+      <p class="email"><strong>Email:</strong> jieqiong.lou@unimelb.edu.au</p>
+
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Michael Mlodzianoski">
+      <h3>Michael Mlodzianoski</h3>
+      <p class="role">Post-doc</p>
+      <p class="identity"><strong>Joined:</strong> 2024</p>
+      <p class="email"><strong>Email:</strong> michael.mlodzianoski@unimelb.edu.au</p>
+
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Xiaomeng Zhang">
+      <h3>Xiaomeng Zhang</h3>
+      <p class="role">Manager</p>
+    <p class="identity"><strong>Joined:</strong> 2021</p>      
+      <p class="email"><strong>Email:</strong> zhanx@unimelb.edu.au</p>
+
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Tony.jpg" alt="Shikun Ma">
+      <h3>Shikun Ma</h3>
+      <p class="role">PhD Student</p>
+      <p class="identity"><strong>Joined:</strong> 2023</p>
+      <p class="email"><strong>Email:</strong> shikun.ma@student.unimelb.edu.au</p>
+    </div>
+
+    </div>
+  </section>
+
+
+<section class="MOREresearchers-section">
+  <div class="researchers-grid">
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Nazanin Ghaderi Nejad">
+      <h3>Nazanin Ghaderi Nejad</h3>
+      <p class="role">PhD Student</p>
+     <p class="identity"><strong>Joined:</strong> 2024</p>
+      <p class="email"><strong>Email:</strong> nghaderineja@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Julissa Sanchez-Velasquez">
+      <h3>Julissa Sanchez-Velasquez</h3>
+      <p class="role">PhD Student</p>
+      <p class="identity"><strong>Joined:</strong> Oct, 2023</p>
+      <p class="email"><strong>Email:</strong> jsanchezvela@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Joaquín Antonio Hinojosa">
+      <h3>Joaquín Antonio Hinojosa</h3>
+      <p class="role">PhD Student</p>
+      <p class="identity"><strong>Joined:</strong> Feb, 2025</p>      
+      <p class="email"><strong>Email:</strong> jhinojosasot@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Blake Bishop">
+      <h3>Blake Bishop</h3>
+      <p class="role">Master Student</p>
+      <p class="identity"><strong>Joined:</strong> 2024</p>
+      <p class="email"><strong>Email:</strong> bcbishop@student.unimelb.edu.au</p>
+    </div>
+   
+ </div>
+</section>
+
+
+<section class="MOREresearchers-section2">
+  <div class="researchers-grid">
+
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Cameron Petty">
+      <h3>Cameron Petty</h3>
+      <p class="role">Master Student</p>
+     <p class="identity"><strong>Joined:</strong> 2025</p>
+      <p class="email"><strong>Email:</strong> cpetty@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Saul Menendez Cardenas">
+      <h3>Saul Menendez Cardenas</h3>
+      <p class="role">Honours</p>
+      <p class="identity"><strong>Joined:</strong> 2025</p>
+      <p class="email"><strong>Email:</strong> smenendezcar@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="Amelia Baulch">
+      <h3>Amelia Baulch</h3>
+      <p class="role">Master Student</p>
+      <p class="identity"><strong>Joined:</strong> 2025</p>      
+      <p class="email"><strong>Email:</strong> akbaulch@student.unimelb.edu.au</p>
+    </div>
+
+    <div class="researcher-card">
+      <img src="images/Unilogo2.png" alt="New">
+      <h3>New</h3>
+      <p class="role">Add role</p>
+      <p class="identity"><strong>Joined:</strong> 2025</p>      
+      <p class="email"><strong>Email:</strong> new@student.unimelb.edu.au</p>
+    </div>
+
+   
+ </div>
+</section>
+
+
+<section class="alumni-section">
+  <h2 class="alumni-title">Alumni</h2>
+  <div class="alumni-list">
+    <p><strong>Siyuan Meng</strong> (2025 Master student)</p>
+    <p><strong>Paul Armitage</strong> (2025 Transfer student)</p>
+    <p><strong>Tao Sun</strong> (2024 Master student)</p>
+    <p><strong>Ashleigh Solano</strong> (2023 PhD student) now Post-doc at WEHI</p>
+    <p><strong>Dominic Gehrig</strong> (2023 Honours)</p>
+    <p><strong>Yifu Zheng</strong> (2023 Master student)</p>
+    <p><strong>Kedi Wang</strong> (2023 Master student)</p>
+    <p><strong>Niall Karunaratne</strong> (2023 Transfer student)</p>
+    <p><strong>Alex Hopper</strong> (2022 Master student)</p>
+    <p><strong>David Priest</strong> (2019 Post-doc) now ... at ...</p>
+    <p><strong>Adele Kerjouan</strong> (2019 Post-doc) now ... at ...</p>
+  </div>
+</section>
+
+
+<h2 class="meet-us-title">Meet us!</h2>
+
+<!-- IMAGE SLIDER SECTION -->
+<section class="slider-section">
+  <div class="slider-container">
+    <div class="slide active-slide">
+      <img src="images/team1.jpg" alt="Research Figure 2">
+    </div>
+    <div class="slide">
+      <img src="images/team2.jpg" alt="Research Figure 3">
+    </div>
+    <div class="slide">
+      <img src="images/team3.jpg" alt="Research Figure 3">
+    </div>
+    <div class="slide">
+      <img src="images/team4.jpg" alt="Research Figure 3">
+    </div>
+    <div class="slide">
+      <img src="images/team5.jpg" alt="Research Figure 3">
+    </div>
+    <div class="slide">
+      <img src="images/1000036411.jpg" alt="Research Figure 3">
+    </div>
+    <div class="slide">
+      <img src="images/1000036398.jpg" alt="Research Figure 3">
+    </div>
+
+    <!-- Navigation Arrows -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="dots">
+    <span class="dot active-dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+  <section class="final-section">
+    <div class="final-container">
+      <div class="left-container">
+        <div class="lab-header">
+          <img src="images/lablogo.png" alt="Lab Logo" class="lab-logo">
+          <div class="lab-title">
+            <h2 class="lab-name2"><strong>Hinde Lab</strong></h2>
+            <h3 class="lab-subtitle">Laboratory for Cellular Biophysics</h3>
+          </div>
+        </div>
+        <div class="contact-info">
+          <h3 class="building-name">David Caro Building</h3>
+          <p>Parkville VIC 3010<br>University of Melbourne<br>Australia</p>
+          <div class="social-icons">
+            <a href="https://x.com/Liz_Hinde_" target="_blank">
+              <img src="images/x-logo.png" alt="X (Twitter) Logo">
+            </a>
+            <a href="https://bsky.app/profile/lizhinde.bsky.social" target="_blank">
+              <img src="images/bluesky-logo.png" alt="Bluesky Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="logo-container2">
+        <img src="images/Unilogo.png" alt="University Logo">
+      </div>
+    </div>
+  </section>
+
+
+
+<script>
+  let slideIndex = 1;
+  showSlide(slideIndex);
+
+  function changeSlide(n) {
+    showSlide(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlide(slideIndex = n);
+  }
+
+  function showSlide(n) {
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active-dot");
+    }
+    slides[slideIndex - 1].style.display = "flex";
+    dots[slideIndex - 1].classList.add("active-dot");
+  }
+</script>
+
+
+</body>
+</html>

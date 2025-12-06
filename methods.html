@@ -481,9 +481,13 @@
 /* =============================
    MOBILE LAYOUT FIX (PHONES)
 ============================= */
+
+/* =============================
+   MOBILE LAYOUT FIX (PHONES)
+============================= */
 @media (max-width: 700px) {
 
-  /* Header spacing */
+  /* Header */
   .header {
     padding: 14px 18px;
     flex-direction: column;
@@ -509,22 +513,26 @@
     height: 38px;
   }
 
-  /* Banner text resize */
-
-    /* Banner */
+  /* Banner */
   .banner-image {
     height: 26vh;
   }
-  
+
   .banner-text h1 {
     font-size: 2.2rem;
   }
 
-  /* Methods two-column → stack */
-      .methods-text {
-      font-size: 1rem;
+  /* =======================
+     METHODS TEXT (MOBILE)
+  ======================= */
+
+  .methods-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
   }
-  
+
   .methods-two-col {
     flex-direction: column;
   }
@@ -534,7 +542,23 @@
     width: 100%;
   }
 
-  /* Equipment two-column → stack */
+  .methods-two-col .left-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .methods-summary p {
+    font-size: 1.2rem;   /* slightly larger for emphasis */
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* =======================
+     EQUIPMENT (MOBILE)
+  ======================= */
+
   .equipment-two-col {
     flex-direction: column;
   }
@@ -545,24 +569,27 @@
   }
 
   .equipment-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;   /* slightly larger than body */
   }
 
   .equipment-text {
     font-size: 1rem;
-  }
-
-  /* Center the equipment link correctly */
-  .equipment-section {
-    padding: 0 20px;
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .equipment-link {
     margin-bottom: 120px;
     font-size: 1rem;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
-  /* Footer */
+  /* =======================
+     FOOTER (MOBILE)
+  ======================= */
+
   .final-container {
     flex-direction: column;
     align-items: center;
@@ -577,7 +604,6 @@
   .social-icons {
     justify-content: center;
   }
-
 }
 
 
@@ -737,6 +763,7 @@ High-performance TIRF and widefield fluorescence microscope coupled to a time-re
 
 </body>
 </html>
+
 
 
 

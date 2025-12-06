@@ -10,18 +10,8 @@ Our research focuses on developing and applying advanced fluorescence spectrosco
 
 ## Repository Contents
 
-This repository hosts the source code for the Hinde Lab website, including:
+This repository hosts the source code for the Laboratory for Cellular Biophysics website, including:
 - HTML pages
 - CSS styling
 - JavaScript components
 - Images and media assets
-
----
-
-## Deployment
-
-The website is automatically deployed using **GitHub Pages**.
-
----
-
-

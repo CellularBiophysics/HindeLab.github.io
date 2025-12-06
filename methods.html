@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hinde Lab at Unimelb</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================
+       GLOBAL STYLES
+    ============================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+    }
+
+    /* =============================
+       HEADER (Fixed)
+    ============================== */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      padding: 20px 50px;
+      position: fixed;        /* fixed at top */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;          /* stays above everything */
+    }
+
+    /* Left side: logo + lab title */
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .top-logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .lab-title {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Navigation links */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #007acc;
+      text-decoration: underline;
+    }
+
+    /* =============================
+       BANNER SECTION
+    ============================== */
+    .banner-section {
+      padding-top: 0px; /* creates space below header but keeps it black */
+      margin-top: 80px; /* prevents white gap */
+      width: 100%;
+      background-color: #000;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    /* --- Top image (narrower vertically) --- */
+    .banner-image {
+      width: 100%;
+      height: 30vh; /* reduced height so it looks elegant and not too tall */
+      position: relative;
+      overflow: hidden;
+    }
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ensures it fills space perfectly */
+  object-position: center;
+  display: block;
+}
+
+/* =============================
+   RESEARCH TITLE ABOVE BANNER
+============================= */
+/* Text overlay */
+.banner-text {
+  position: absolute;
+  top: 50%;               /* centers vertically */
+  left: 50%;              /* centers horizontally */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.banner-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpResearch 1.3s ease-out forwards;
+  animation-delay: 0.4s;  /* optional delay so it feels smoother */
+}
+
+@keyframes fadeUpResearch {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+ 
+
+/* =============================
+   METHODS TITLE SECTION
+============================= */
+
+.methods-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 1150px;
+  margin: 40px auto 40px auto;
+  padding: 0 20px; /* little side padding for smaller screens */
+
+}
+
+
+.methods-two-col {
+  max-width: 1150px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+.methods-two-col img {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.methods-two-col .left-text {
+  width: 55%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000;
+  text-align: justify;
+  text-justify: inter-word;
+
+}
+
+.methods-two-col .left-text p {
+  margin-bottom: 12px;
+}
+
+.methods-list strong {
+  color: #333333;             /* softer black (dark grey) */
+  font-weight: 600;
+}
+
+.methods-summary {
+  max-width: 1150px;             /* match global content width */
+  margin: 0 auto 80px auto;      /* center it with same margins */
+  padding: 0 20px;               /* small side padding for screens */
+}
+
+.methods-summary p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  line-height: 1.8;
+  color: #000;
+  text-align: center;
+  text-justify: inter-word;
+}
+
+
+.join-button {
+  background-color: #181717;
+  color: white;
+  font-size: 1.1rem;
+  padding: 20px 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  display: inline-block;       /* keep it like this */
+}
+
+    .join-button:hover {
+      background-color: #3b3b3b;
+    }
+
+/* parent container */
+.button-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+
+
+.github-button {
+  background-color: #181717;   /* GitHub black */
+  color: white;
+  font-size: 1.2rem;
+  padding: 18px 40px;
+  border-radius: 8px;
+  display: inline-flex;        /* puts logo + text in one line */
+  align-items: center;         /* vertically center both */
+  gap: 14px;                   /* spacing between logo + text */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.github-button:hover {
+  background-color: #3b3b3b;
+}
+
+.github-logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+}
+
+
+.equipment-section {
+  max-width: 1150px;     /* match page width */
+  margin: 80px auto 80px auto;   /* space above + centered block */
+  padding: 0 20px;        /* small side padding for laptops */
+}
+
+.equipment-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  text-align: left;      /* this keeps it left aligned */
+}
+
+
+
+/* =============================
+   EQUIPMENT TWO COLUMN LAYOUT
+============================== */
+
+.equipment-two-col {
+  max-width: 1150px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.equipment-left {
+  width: 45%;
+}
+
+.equipment-title {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #000;
+  margin-top: 0;       
+
+}
+
+.equipment-text {
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  color: #000;
+}
+
+.equipment-right {
+  width: 55%;   /* slightly wider than half as you requested */
+}
+
+.equipment-left,
+.equipment-right {
+  align-self: flex-start;
+}
+
+
+.equipment-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+
+
+.equipment-link {
+  font-size: 18px;
+  margin-top: 5px;
+  text-align: justify;
+  color: #000;
+  max-width: 100%;
+  margin-bottom: 200px;
+}
+
+.equipment-link a {
+  color: #007acc;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.equipment-link a:hover {
+  text-decoration: underline;
+}
+
+
+    /* =============================
+       FOOTER
+    ============================== */
+    .final-section {
+      background-color: #f5f5f5;
+      padding: 40px 0;
+    }
+
+    .final-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .left-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .lab-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .lab-logo {
+      width: 60px;
+      height: auto;
+    }
+
+    .lab-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-name2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .lab-subtitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+
+    .building-name {
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: auto;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    .logo-container2 img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      .banner-image {
+        min-height: 45vh;
+      }
+      .banner-bottom {
+        min-height: 35vh;
+      }
+      .banner-text h1 {
+        font-size: 2.6rem;
+      }
+      .banner-text h2 {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <a href="https://study.unimelb.edu.au/">
+        <img src="images/UnimelbForTop.png" alt="University of Melbourne Logo" class="top-logo">
+      </a>
+      <h1 class="lab-title">HINDE LAB</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research2.html">Research</a>
+      <a href="methods.html">Methods</a>
+      <a href="team.html">Team</a>
+      <a href="publications.html">Publications</a>
+      <a href="join.html">Join Us</a>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+<section class="banner-section">
+  <div class="banner-image">
+    <img src="images/ForResearch.png" alt="Research Banner">
+    <div class="banner-text">
+      <h1>Methods</h1>
+    </div>
+  </div>
+</section>
+
+<p class="methods-text">
+  Advances in optical microscopy and molecule-specific fluorescence labelling strategies have enabled molecular insights into the spatiotemporal dynamics of biological processes that were previously inaccessible. In the Laboratory for Cellular Biophysics, we specialise in parallel measurement of multiple fluorescence observables – intensity, anisotropy, and lifetime – to quantify molecular behaviour in the native environment of the living nucleus. By coupling these observables with FRET and fluorescence correlation spectroscopy (FCS), we can resolve: (1) structure at the nanometre scale, using FRET to detect protein–protein and protein–ligand interactions, and (2) dynamics across nanoseconds to milliseconds, using FCS and related approaches to quantify diffusion, transport, and interaction kinetics. This methodological framework enables us to measure key molecular parameters, including protein–ligand binding, oligomerisation, and intracellular trafficking.
+</p>
+
+<p class="methods-text">
+  Our core methods include:
+</p>
+
+<section class="methods-two-col">
+  <div class="left-text">
+    <div>
+      <p><strong>Fluorescence lifetime imaging microscopy (FLIM):</strong> used for hetero-FRET detection and mapping of protein interactions, as well as biosensing of intracellular pH.</p>
+      <p><strong>Fluorescence anisotropy imaging microscopy (FAIM):</strong> used for homo-FRET detection and mapping of protein self-association, as well as biosensing of intracellular viscosity.</p>
+      <p><strong>Fluorescence correlation spectroscopy (FCS):</strong> used to quantify local protein dynamics in a subcellular location (e.g. diffusion coefficient and concentration).</p>
+      <p><strong>Fluorescence fluctuation spectroscopy and brightness analysis:</strong> used to quantify and spatially map protein oligomer formation and stoichiometry.</p>
+      <p><strong>Scanning FCS and pair correlation function (pCF) analysis:</strong> used to quantify protein transport with respect to subcellular architecture (e.g. arrival time, directionality, diffusion law).</p>
+      <p><strong>Spatiotemporal image correlation spectroscopy (STICS, RICS):</strong> used to map protein mobility and binding dynamics across a subcellular location.</p>
+    </div>
+  </div>   
+
+  <img src="images/MethodsImage.png" alt="methods illustration">
+</section>
+
+
+<section class="methods-summary">
+  <p>
+    Together, these methods provide a powerful framework to reveal how molecular interactions
+    and dynamics underpin genome function within the context of live-cell nuclear architecture.
+  </p>
+</section>
+
+
+<div class="button-wrapper">
+  <a href="https://github.com/ehinde" target="_blank" class="github-button">
+    <img src="images/github-mark-white.png" class="github-logo" alt="GitHub Logo">
+    Explore our software on GitHub!
+  </a>
+</div>
+
+
+</section>
+
+
+<div class="equipment-section">
+  <h2>Equipment available:</h2>
+</div>
+
+
+<section class="equipment-two-col">
+  <div class="equipment-left">
+    <p class="equipment-title"><strong>Olympus FV3000</strong></p>
+
+    <p class="equipment-text">
+      High-performance confocal laser scanning microscope coupled to an ISS FLIMbox, enabling time-resolved fluorescence lifetime detection alongside fluorescence fluctuation spectroscopy and orbital tracking for quantitative live-cell imaging.
+    </p>
+  </div>
+
+  <div class="equipment-right">
+    <img src="images/OlympusFV3000.jpg" alt="Olympus FV3000 microscope">
+  </div>
+</section>
+
+
+<section class="equipment-two-col equipment-reverse">
+  <div class="equipment-right">
+    <img src="images/Nikon.png" alt="Olympus FV3000 microscope">
+  </div>
+
+  <div class="equipment-left">
+    <p class="equipment-title"><strong>Nikon Ti2 Eclipse</strong></p>
+
+    <p class="equipment-text">
+High-performance TIRF and widefield fluorescence microscope coupled to a time-resolved PCO camera and pulsed laser excitation, enabling lifetime-based FRET detection and single-molecule tracking for quantitative live-cell imaging.
+    </p>
+  </div>
+</section>
+
+<div class="equipment-section">
+  <p class="equipment-link">
+    For more information visit:
+    <a href="https://microscopy.unimelb.edu.au/om/capabilities/instruments" target="_blank">
+      microscopy.unimelb.edu.au/om/capabilities/instruments
+    </a>
+  </p>
+</div>
+
+
+
+  <!-- FOOTER -->
+  <section class="final-section">
+    <div class="final-container">
+      <div class="left-container">
+        <div class="lab-header">
+          <img src="images/lablogo.png" alt="Lab Logo" class="lab-logo">
+          <div class="lab-title">
+            <h2 class="lab-name2"><strong>Hinde Lab</strong></h2>
+            <h3 class="lab-subtitle">Laboratory for Cellular Biophysics</h3>
+          </div>
+        </div>
+        <div class="contact-info">
+          <h3 class="building-name">David Caro Building</h3>
+          <p>Parkville VIC 3010<br>University of Melbourne<br>Australia</p>
+          <div class="social-icons">
+            <a href="https://x.com/Liz_Hinde_" target="_blank">
+              <img src="images/x-logo.png" alt="X (Twitter) Logo">
+            </a>
+            <a href="https://bsky.app/profile/lizhinde.bsky.social" target="_blank">
+              <img src="images/bluesky-logo.png" alt="Bluesky Logo">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="logo-container2">
+        <img src="images/Unilogo.png" alt="University Logo">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

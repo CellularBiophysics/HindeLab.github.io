@@ -362,6 +362,10 @@
    MOBILE RESPONSIVE FIXES
 ============================= */
 @media (max-width: 600px) {
+#banner-img {
+  content: url("images/MainBanner_phone.png");
+  object-fit: cover;
+}
 
   .header {
     padding: 14px 18px;
@@ -471,12 +475,13 @@
   <!-- BANNER -->
   <section class="banner-section">
     <div class="banner-image">
-    <img src="images/newBanner6.png" alt="Hinde Lab Banner">
+    <img src="images/newBanner6.png" alt="Hinde Lab Banner" id="banner-img">
     </div>
 
     <div class="banner-bottom">
       <div class="banner-text">
-        <h1>Welcome to the <h1> Laboratory for Cellular Biophysics</h1>
+        <h1>Welcome to the </h1>
+         <h1> Laboratory for Cellular Biophysics</h1>
         <h2>School of Physics, University of Melbourne</h2>
       </div>
     </div>

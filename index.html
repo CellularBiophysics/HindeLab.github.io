@@ -363,34 +363,20 @@
 ============================= */
 @media (max-width: 600px) {
 
-  #banner-img {
-    content: url("images/MainBanner_phone3.png");
-    object-fit: contain;
+#banner-img { content: url("images/MainBanner_phone3.png"); 
+             object-fit: contain; 
+            } /* Reduce space between banner image and lab name on mobile */ 
+  .banner-image { 
+    height: 20vh; 
+  } 
+  .banner-bottom { 
+    height: auto; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+  } 
+  .banner-text h1 { 
+    margin-bottom: 6px; /* tighten title spacing */ 
   }
-
-  .banner-section {
-    padding-top: 60px;   /* tighter spacing under header */
-  }
-
-  .banner-image {
-    height: 20vh;
-  }
-
-  .banner-bottom {
-    height: auto;
-    padding: 10px 20px 10px;
-  }
-
-  .banner-text h1 {
-    font-size: 2.2rem;
-    margin-bottom: 6px;
-  }
-
-  .banner-text h2 {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-  }
-}
 
 
   .header {

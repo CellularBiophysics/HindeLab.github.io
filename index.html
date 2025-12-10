@@ -367,6 +367,21 @@
   object-fit: contain;
 }
 
+  /* Reduce space between banner image and lab name on mobile */
+.banner-image {
+  height: 22vh;        /* was 28vh → tighter */
+}
+
+.banner-bottom {
+  padding-top: 20px;  /* was 50px */
+  padding-bottom: 30px; /* was 60px */
+}
+
+.banner-text h1 {
+  margin-bottom: 8px;  /* tighten title spacing */
+}
+
+
   .header {
     padding: 14px 18px;
     flex-direction: column;
@@ -481,7 +496,7 @@
     <div class="banner-bottom">
       <div class="banner-text">
         <h1>Welcome to the </h1>
-         <h1> Laboratory for Cellular Biophysics</h1>
+        <h1> Laboratory for Cellular Biophysics</h1>
         <h2>School of Physics, University of Melbourne</h2>
       </div>
     </div>

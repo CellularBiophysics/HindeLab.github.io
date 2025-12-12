@@ -6,6 +6,7 @@ Our research focuses on developing and applying advanced fluorescence spectrosco
 
 ## Visit our website
 
-**https://CellularBiophysics.github.io/HindeLab.github.io**
+**https://CellularBiophysics.github.io/HindeLab**
+
 
 
